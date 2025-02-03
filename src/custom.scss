@@ -1,0 +1,241 @@
+//Colors
+$red:     #dc3545;
+$cyan:    #0dcaf0;
+$yellow: #d4fa87;
+$purple: #950df0;
+$lime: #18f00d;
+$orange: #f09d0d;
+//Gray cycle
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// Override Bootstrap variables (optional)
+$primary:  $cyan; // Change primary color (example: gray)
+$secondary: #1aa8d7;
+$danger: $red;
+$info: $cyan;
+$gray: $gray-800;
+
+
+//Start Styling
+body {
+  font-family: 'Poppins', sans-serif;
+  justify-content: top;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out; /* Smooth transitions */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: -1;
+}
+
+// SCSS Improvements for Responsiveness
+@import "../node_modules/bootstrap/scss/bootstrap";
+  
+   @media (max-width: 768px) {
+    .forecast-card {
+      font-size: 0.9rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .forecast-card {
+      font-size: 0.8rem;
+    }
+  }
+
+//Small size
+@include media-breakpoint-down(sm) {
+  body{
+    height: 100%;
+    width: 100%;
+    background-image: url(../public/assets/smweather.png);  //small sreens
+
+    .input{
+      width: 80%;
+      position: absolute;
+      margin-left: 2.3rem;
+   } 
+   .card-container{
+     .card{
+      margin-top: 8rem;
+      background-color: hsla(233, 83%, 64%, 0.827);
+      color: white;
+      border: 1px solid rgb(107, 8, 227);
+    }
+  } 
+  } 
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(114, 102, 245, 0.8);
+    color: #fff;
+  }
+  .forecast{
+    margin-bottom: 0rem;
+    width: 90%;
+    margin-left: 5px;
+    background-color: hsla(233, 83%, 64%, 0.827);
+    color: white;
+    border: 1px solid rgb(107, 8, 227);
+    border-radius: 3px;
+  }
+  .forecast-container{
+    margin-left: 3%;
+    margin-top: 1rem;
+  }
+ .day, .map{
+  background-color: #4c3ff8;
+}
+.map-container{
+  width: 100%;
+}
+.span{
+  border: 2px solid $red;
+  border-radius: 3px;
+  margin-left: 35%;
+  margin-top: 60%;
+  padding: 0.3rem 2rem;
+  width: 100%;
+}
+}
+
+  //Medium size
+@include media-breakpoint-up(md) {
+  body{
+    background-image: url(../public/assets/mdweather.png);
+  }
+.card{
+  width: 100%;
+  color: #fff;  //medium screens
+}
+ .weather{
+  margin-left: 7rem;
+  margin-bottom: 2rem;
+} 
+.input{
+  width: 80%;
+  margin-left: 7rem;
+} 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(114, 102, 245, 0.8);
+  color: #fff;
+}
+.forecast{
+  margin-bottom: 0rem;
+  width: 90%;
+  margin-left: 5px;
+  background-color: hsla(233, 83%, 64%, 0.827);
+  color: white;
+  border: 1px solid rgb(107, 8, 227);
+  border-radius: 3px;
+}
+.forecast-container{
+  margin-left: 7%;
+  margin-top: 1rem;
+}
+.day, .map{
+  margin-left: 7.5%;
+background-color: #4c3ff8;
+}
+.card {
+  background: hsla(233, 83%, 64%, 0.827);
+  max-width: 500px;
+  margin-left: 4.2rem;
+  border: 2px solid rgb(107, 8, 227);
+  color: #fff;
+}
+ .card-container{
+  max-width: 400px;
+  margin-bottom: 2rem;
+  left: 50%;
+  margin-left: 10rem;
+} 
+.map-container{
+  margin-left: 4%;
+}
+.span{
+  margin-left: 50%;
+  padding: 0.5rem 2rem;
+  border: 1px solid $red;
+  border-radius: 4px;
+}
+}
+
+ //Large Size
+@include media-breakpoint-up(lg) {
+  body{
+    background-image: url(../public/assets/weather.png);  //large sreens
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(114, 102, 245, 0.8);
+  }
+  .card {
+    background: hsla(233, 83%, 64%, 0.827);
+    max-width: 500px;
+    margin-left: 4.2rem;
+    border: 2px solid rgb(107, 8, 227);
+    color: #fff;
+  }
+   .card-container{
+    max-width: 400px;
+    margin-bottom: 2rem;
+    left: 50%;
+    margin-left: 20rem;
+  } 
+  .input{
+     margin-left: 13rem;
+     width: 55%;
+     justify-content: center;
+     align-items: center;
+  } 
+  .forecast{
+    background: hsla(233, 83%, 64%, 0.827);
+    border: 2px solid rgb(107, 8, 227);
+    border-radius: 4px;
+    margin-left: 5rem;
+  }
+.day, .map{
+  margin-left: 4.5rem;
+  background-color: #4c3ff8;
+}
+.map-container{
+  width: 100%;
+  margin-left: 2rem;
+}
+.forecast-container{
+  color: #fff;
+}
+.span{
+  border: 3px solid rgb(230, 45, 45);
+  border-radius: 4px;
+  margin-left: 23rem;
+  width: 50%;
+  padding: 0.5rem 2rem;
+}
+}
