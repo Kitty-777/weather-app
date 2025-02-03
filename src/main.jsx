@@ -44,7 +44,6 @@ function WeatherApp() {
     }
 
     setError(null);
-    setLoading(true);
     setShowMap(false);
     setShowForecast(false);
 
@@ -80,9 +79,7 @@ function WeatherApp() {
     } catch (err) {
       setError(err.message);
       setWeather(null);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   return (
