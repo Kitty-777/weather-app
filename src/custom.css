@@ -12124,9 +12124,10 @@ textarea.form-control-lg {
     background: rgba(114, 102, 245, 0.8);
   }
   .card {
+    width: 140%;
     background: hsla(233, 83%, 64%, 0.827);
     max-width: 500px;
-    margin-left: 4.2rem;
+    margin-left: 4rem;
     border: 2px solid rgb(107, 8, 227);
     color: #fff;
   }
@@ -12134,7 +12135,7 @@ textarea.form-control-lg {
     max-width: 400px;
     margin-bottom: 2rem;
     left: 50%;
-    margin-left: 20rem;
+    margin-left: 15rem;
   }
   .input {
     margin-left: 13rem;
@@ -12146,7 +12147,7 @@ textarea.form-control-lg {
     background: hsla(233, 83%, 64%, 0.827);
     border: 2px solid rgb(107, 8, 227);
     border-radius: 4px;
-    margin-left: 5rem;
+    margin-left: 2rem;
   }
   .day, .map {
     margin-left: 4.5rem;
@@ -12154,9 +12155,10 @@ textarea.form-control-lg {
   }
   .map-container {
     width: 100%;
-    margin-left: 2rem;
+    margin-left: 2.3rem;
   }
   .forecast-container {
+    margin-left: 1.5rem;
     color: #fff;
   }
   .span {

@@ -9,6 +9,7 @@ function WeatherApp() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showMap, setShowMap] = useState(false);
   const [showForecast, setShowForecast] = useState(false);
@@ -16,25 +17,25 @@ function WeatherApp() {
   const apiKey = '15cee790381c1c7ce2a1e6686c6a1c25'; 
 
   const weatherBackgrounds = {
-    'clear sky': 'url(/assets/clear.png)',
-    'few clouds': 'url(/assets/few-clouds.png)',
-    'scattered clouds': 'url(/assets/scattered-clouds.png)',
-    'broken clouds': 'url(/assets/broken-clouds.png)',
-    'overcast clouds': 'url(/assets/overcast-clouds.png)',
-    'light rain': 'url(/assets/light-rain.png)',
-    'moderate rain': 'url(/assets/moderate-rain.png)',
-    'heavy intensity rain': 'url(/assets/heavy-rain.png)',
-    'very heavy rain': 'url(/assets/heavy-rain.png)',
-    'snow': 'url(/assets/moderate-snow.png)',
-    'light snow': 'url(/assets/light-snow.png)',
-    'moderate snow': 'url(/assets/moderate-snow.png)',
-    'heavy intensity snow': 'url(/assets/heavy-snow.png)',
-    'thunderstorm': 'url(/assets/thunderstorm.png)',
-    'light drizzle': 'url(/assets/drizzle.png)',
-    'mist': 'url(/assets/mist.png)',
-    'haze': 'url(/assets/haze.png)',
-    'fog': 'url(/assets/fog.png)',
-    'smoke': 'url(/assets/smoke.png)',
+    'clear sky': 'url(/weather-app/assets/clear.png)',
+    'few clouds': 'url(/weather-app/assets/few-clouds.png)',
+    'scattered clouds': 'url(/weather-app/assets/scattered-clouds.png)',
+    'broken clouds': 'url(/weather-app/assets/broken-clouds.png)',
+    'overcast clouds': 'url(/weather-app/assets/overcast-clouds.png)',
+    'light rain': 'url(/weather-app/assets/light-rain.png)',
+    'moderate rain': 'url(/weather-app/assets/moderate-rain.png)',
+    'heavy intensity rain': 'url(/weather-app/assets/heavy-rain.png)',
+    'very heavy rain': 'url(/weather-app/assets/heavy-rain.png)',
+    'snow': 'url(/weather-app/assets/moderate-snow.png)',
+    'light snow': 'url(/weather-app/assets/light-snow.png)',
+    'moderate snow': 'url(/weather-app/assets/moderate-snow.png)',
+    'heavy intensity snow': 'url(/weather-app/assets/heavy-snow.png)',
+    'thunderstorm': 'url(/weather-app/assets/thunderstorm.png)',
+    'light drizzle': 'url(/weather-app/assets/drizzle.png)',
+    'mist': 'url(/weather-app/assets/mist.png)',
+    'haze': 'url(/weather-app/assets/haze.png)',
+    'fog': 'url(/weather-app/assets/fog.png)',
+    'smoke': 'url(/weather-app/assets/smoke.png)',
   };
 
   const fetchWeather = async () => {
@@ -44,6 +45,7 @@ function WeatherApp() {
     }
 
     setError(null);
+    setLoading(true);
     setShowMap(false);
     setShowForecast(false);
 
@@ -79,14 +81,16 @@ function WeatherApp() {
     } catch (err) {
       setError(err.message);
       setWeather(null);
-    } 
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="/main.jsx">Weather App</a>
+          <a className="navbar-brand" href="/weather-app/main.jsx">Weather App</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -98,6 +102,7 @@ function WeatherApp() {
           </div>
         </div>
       </nav>
+      {loading && <div className='loading spinner-border mx-auto col-12'></div>}
      
      <div className='input'>
       <div className="input mt-5 pt-4 text-center">
