@@ -22,6 +22,7 @@ function WeatherApp() {
     'scattered clouds': 'url(/weather-app/assets/scattered-clouds.png)',
     'broken clouds': 'url(/weather-app/assets/broken-clouds.png)',
     'overcast clouds': 'url(/weather-app/assets/overcast-clouds.png)',
+    'rain': 'url(/weather-app/assets/light-rain.png)',
     'light rain': 'url(/weather-app/assets/light-rain.png)',
     'moderate rain': 'url(/weather-app/assets/moderate-rain.png)',
     'heavy intensity rain': 'url(/weather-app/assets/heavy-rain.png)',
@@ -29,6 +30,7 @@ function WeatherApp() {
     'snow': 'url(/weather-app/assets/moderate-snow.png)',
     'light snow': 'url(/weather-app/assets/light-snow.png)',
     'moderate snow': 'url(/weather-app/assets/moderate-snow.png)',
+     'heavy snow': 'url(/weather-app/assets/heavy-snow.png)',
     'heavy intensity snow': 'url(/weather-app/assets/heavy-snow.png)',
     'thunderstorm': 'url(/weather-app/assets/thunderstorm.png)',
     'light drizzle': 'url(/weather-app/assets/drizzle.png)',
@@ -90,7 +92,8 @@ function WeatherApp() {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="/weather-app/main.jsx">Weather App</a>
+    <a className="navbar-brand" href="https://kitty-777.github.io/weather-app/"
+    >Weather App</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>
