@@ -14,7 +14,7 @@ function WeatherApp() {
   const [showMap, setShowMap] = useState(false);
   const [showForecast, setShowForecast] = useState(false);
 
-  const apiKey = '15cee790381c1c7ce2a1e6686c6a1c25'; 
+  const apiKey = import.meta.env.VITE_WEATHER_API_KEY; 
 
   const weatherBackgrounds = {
     'clear sky': 'url(/weather-app/assets/clear.png)',
